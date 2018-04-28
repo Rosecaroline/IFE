@@ -1,0 +1,44 @@
+body, div, p, h2, h3, h4, ul, li, dl, dt, dd{
+    margin: 0;
+    padding: 0;
+}
+ul, li{
+    list-style: none;
+}
+.clearfix{
+    overflow: auto;
+    zoom: 1;
+}
+#wrap{
+    width: 800px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 0 5px;
+}
+.title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.title h2{
+    font-size: 28px;
+    line-height: 40px;
+}
+.main h4{
+    font-size: 18px;
+    line-height: 60px;
+}
+.main ul li{
+    float: left;
+    margin-right: 30px;
+}
+.main span{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+.main p{
+    margin-bottom: 10px;
+}
+.hr{
+    height: 20px;
+}
