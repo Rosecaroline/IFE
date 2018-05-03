@@ -1,0 +1,151 @@
+body, div, p, h1, h2, h3, article, section, ul, li, ol{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+.clearfix:after { 
+    visibility:hidden; 
+    display:block; 
+    font-size:0; 
+    content:" "; 
+    clear:both; 
+    height:0;
+} 
+.clearfix { 
+    zoom:1;
+}
+
+header{
+    width: 100%;
+    background: #333;
+    height: 80px;
+}
+.logo{
+    float: left;
+    color: #fff;
+    padding-top: 20px;
+}
+.site{
+    float: right;
+    padding-top: 8px;
+}
+.site li{
+    display: inline-block;
+}
+.site li a{
+    color: #fff;
+    text-decoration: underline;
+}
+#banner{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+#banner .pic{
+    background: #66bb33;
+    height: 300px;
+}
+#banner ul{
+    position: absolute;
+    bottom: 20px;
+    right: 210px;
+}
+#banner ul li{
+    display: inline-block;
+    margin-left: 5px;
+}
+#banner ul li a{
+    display: inline-block;
+    width: 28px;
+    height: 34px;
+    border: 1px solid #335e1a;
+    background: #b2dd99;
+    line-height: 34px;
+    text-align: center;
+    color: #335e1a;
+}
+#banner ul li a.active{
+    height: 49px;
+    border: 1px solid #14250a;
+    background: #e0f1d6;
+    color: #14250a;
+    line-height: 64px;
+}
+.main_top{
+    border-bottom: 1px solid #dddddd;
+    height: 70px;
+}
+.main_top ul{
+    padding-top: 20px;
+}
+.main_top li{
+    float: left;
+}
+.main_top li a{
+    display: inline-block; 
+    width: 104px;
+    height: 49px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+    line-height: 49px;
+    color: #000;
+    background: #eee;
+}
+.main_top li a.tab_active{
+    border-bottom: 1px solid transparent;
+    background: #fff;
+}
+.content{
+    padding-top: 10px;
+}
+.content .row{
+    display: flex;
+}
+.content .row li{
+    border: 1px solid #ccc;
+    height: 174px;
+    text-align: center;
+    line-height: 174px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.content .row li.content1{
+    flex: 0 0 34%;
+}
+.content .row li.content3{
+    flex: 0 0 29.3%;
+}
+.content .row2 li{
+    flex: 0 0 24%;
+}
+.content .row3 li{
+    flex: 0 0 32%;
+}
+.content .row3 li.content10{
+    flex: 0 0 33.3%;
+}
+footer{
+    width: 100%;
+    height: 120px;
+    background: #666;
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+}
