@@ -1,0 +1,221 @@
+.fix_left{
+    width: 100px;
+    height: 100%;
+    background: #1d2531;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.fix_left ul{
+    padding-top: 20px;
+}
+.fix_left ul li{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.fix_left .left_icon{
+    position: absolute;
+    bottom: 10px;
+    left: 22px;
+}
+.fix_left .left_icon img:first-child{
+    margin-right: 16px;
+}
+/* 中间导航 */
+.nav{
+    float: left;
+    width: 250px;
+    background: #222c3c;
+    height: 100%;
+    margin-left: 100px;
+    padding-bottom: 20px;
+}
+.nav .menu{
+    width: 190px;
+    margin: 0 auto;
+    border-bottom: 1px solid #2a3547;
+}
+.nav .dash{
+    border-bottom: none;
+    margin-bottom: 160px;
+}
+.nav_title{
+    padding: 28px 0 14px 0;
+}
+.nav_title h3{
+    color: #5b6779;
+    background: url(../images/setting.png) no-repeat right center;
+}
+.nav_list li a{
+    display: block;
+    color: #b7c0cd;
+    margin-bottom: 16px;
+}
+.nav_list li a:hover{
+    color: #fff;
+}
+.nav_list .sales a{
+    background: url(../images/sales_bg.png) no-repeat right center;
+}
+.nav_pro li a{
+    padding-left: 28px;
+}
+.nav_pro li:first-child a{
+    background: url(../images/books_bg.png) no-repeat left center;
+}
+.nav_pro li:nth-child(2) a{
+    background: url(../images/tutorails.png) no-repeat left center;
+}
+.nav_pro li:nth-child(3) a{
+    background: url(../images/stocks.png) no-repeat left center;
+}
+.nav_pro li:last-child a{
+    background: url(../images/chart.png) no-repeat left center;
+}
+.nav_list li:last-child a{
+    margin-bottom: 25px;
+}
+.nav_list .message a{
+    background: url(../images/message_bg.png) no-repeat right center;
+    color: #fff;
+}
+.nav_list .inte a{
+    background: url(../images/inte.png) no-repeat right center;
+}
+.nav .month{
+    width: 190px;
+    margin: 0 auto;
+    background: url(../images/month_bg.png) no-repeat left bottom;
+    padding-bottom: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 130px;
+}
+.nav .month span{
+    color: #fff;
+}
+.nav .month span:first-child{
+    margin-right: 12px;
+}
+/* 最右边白色 */
+.right{
+    float: left;
+    width: calc(100% - 350px);
+}
+.right_top{
+    height: 80px;
+    border-bottom: 1px solid #e6e9ec;
+    position: relative;
+}
+.right_top .right_title{
+    position: absolute;
+    left: 30px;
+    top: 31px;
+}
+.right_top .right_title h1{
+    color: #354052;
+    font-size: 24px;
+}
+.right_top .fix_right{
+    position: fixed;
+    right: 30px;
+    background: url(../images/men_icon.png) no-repeat right center;
+    top: 14px;
+}
+.right_top .fix_right .men_info{
+    float: right;
+    padding: 0 40px 0 18px;
+}
+.right_top .fix_right .men_info p{
+    color: #2399f1;
+    font-size: 16px;
+}
+.right_top .fix_right .men_info span{
+    color: #b5b5b5;
+}
+.fix_cont{
+    float: left;
+    width: 399px;
+    border-right: 1px solid #e6e9ec; 
+}
+.fix_cont .search{
+    height: 36px;
+    width: 340px;
+    border-bottom: 1px solid #e6e9ec;
+    background: url(../images/search.png) no-repeat center;
+    padding: 15px 30px 18px 29px;
+}
+.fix_cont .search .text01{
+    width: 280px;
+    height: 34px;
+    padding: 0px 14px;
+    border: none;
+    background: none;
+    color: #9fa9ba;
+    line-height: 34px;
+}
+.fix_cont .search .anniu{
+    width: 29px;
+    height: 34px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.people_info{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.info_list{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e9ec;
+    border-left: 3px solid #fff;
+    height: 129px;
+}
+/* .info_list{
+    height: 129px;
+    border-bottom: 1px solid #e6e9ec;
+    border-left: 3px solid #fff;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.info_list .people{
+    padding-top: 15px;
+}
+.people .people_name{
+    float: left;
+    margin-left: 20px;
+}
+.people img{
+    float: left;
+}
+.people .people_name p{
+    color: #585d68;
+    font-size: 16px;
+}
+.people .people_name span{
+    color: #b5b5b5;
+}
+.people .m{
+    float: right;
+    color: #7f8fa4;
+}
+.people_about{
+    display: inline-block;
+    margin-top: 8px;
+    color: #585d68;
+}
+.info_list:hover{
+    border-left: 3px solid #2399f1;
+}
+.info_list:hover .people .people_name p{
+    color: #2399f1;
+    background: url(../images/name_hover.png) no-repeat left center;
+    padding-left: 15px;
+}
+.info_list:first-child:hover .people_about{
+    background: url(../images/people_num.png) no-repeat right center;
+    padding-right: 20px;
+} */
