@@ -1,0 +1,59 @@
+body, div, p, h2, h3, h4, ul, li, dl, dt, dd{
+    margin: 0;
+    padding: 0;
+}
+ul, li{
+    list-style: none;
+}
+.clearfix{
+    overflow: auto;
+    zoom: 1;
+}
+#wrap{
+    width: 800px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+.title h2{
+    font-size: 18px;
+    padding-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+}
+
+.main h4{
+    font-size: 16px;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background: #999;
+    text-align: center;
+    line-height: 150px;
+}
+.main ul, .main .item{
+    float: left;
+    padding: 20px;
+}
+.main ul li{
+    float: left;
+    margin-right: 30px;
+}
+.main span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.hr{
+    height: 20px;
+}
+.title{
+    background: #666;
+    height: 60px;
+}
+.basic_info, .tel, .talent, .edu, .pro, .hobby{
+    height: 150px;
+    border-bottom: 1px solid #ccc;
+}
+/* .hobby p{
+    display: none;
+} */

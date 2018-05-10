@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <button id="leave-btn">余</button>
+    <p id="result">运算结果</p>
+    <script>
+        var Fnum = document.getElementById("first-number");
+        var Snum = document.getElementById("second-number");
+        var Btn = document.getElementsByTagName("button");
+        var oP = document.getElementById("result");
+
+        Btn[0].onclick = function(){
+            oP.innerHTML = parseFloat(Fnum.value) + parseFloat(Snum.value);
+        }
+        Btn[1].onclick = function(){
+            oP.innerHTML = parseFloat(Fnum.value) - parseFloat(Snum.value);
+        }
+        Btn[2].onclick = function(){
+            oP.innerHTML = parseFloat(Fnum.value) * parseFloat(Snum.value);
+        }
+        Btn[3].onclick = function(){
+            oP.innerHTML = parseFloat(Fnum.value) / parseFloat(Snum.value);
+        }
+        Btn[4].onclick = function(){
+            oP.innerHTML = parseInt(Fnum.value) % parseInt(Snum.value);
+        }
+    </script>
+</body>
+</html>

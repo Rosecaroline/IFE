@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>看看我的爱好</title>
+    <link rel="stylesheet" href="style_3.css">
+</head>
+<body>
+    <div id="wrap" class="clearfix">
+        <div class="title">
+            <h2>简历</h2>
+        </div>
+        <div class="main">
+            <div class="basic_info clearfix">
+                <h4>基本信息</h4>
+                <ul>
+                    <li>姓名 张三</li>
+                    <li>性别 男</li>
+                    <li>应聘职位 Web前端工程师</li>
+                </ul>
+            </div>
+            <div class="tel clearfix">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>手机 12312341234</li>
+                    <li>Email <a href="##">123456@qq.com</a></li>
+                    <li>个人主页 <a href="##">Github</a></li>
+                </ul>
+            </div>
+            <div class="talent">
+                <h4>能力描述</h4>
+                <div class="item">
+                    <p><span>技术能力</span>熟练掌握HTML,CSS,JavaScristan</p>
+                    <p><span>综合能力</span>良好的沟通，主动积极，努力勤奋</p>
+                </div>
+            </div>
+            <div class="edu">
+                <h4>教育经历</h4>
+                <div class="item">
+                    <p><span>本科</span>百度前端技术学院小薇学院
+                    <p><span>研究生</span>百度前端技术学院大斌学院</p>                   
+                </div>
+            </div>
+            <div class="pro">
+                <h4>项目经历</h4>
+                <div class="item">
+                    <p><span>小度小度</span>作为前端工程师角色参与了ABC组件的开发</p>
+                    <p><span>SAN Doc</span>作为文档工程师参与了SAN Doc编写</p>                    
+                </div>
+            </div>
+            <div class="hobby">
+                <h4>我的爱好</h4>
+                <div class="item" id="item">
+                    <button id="btn">点开看看</button>       
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var Item = document.getElementById("item");
+        var Btn = document.getElementById("btn");
+        Btn.onclick = function(){
+            Item.innerHTML = '<p>喜欢前端</p>' + '<br>' + '<p>喜欢排球</p>';
+        }
+    </script>
+</body>
+</html>
