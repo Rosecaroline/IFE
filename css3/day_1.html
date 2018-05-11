@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cont{
+            width: 400px;
+            margin: 0 auto;
+        }
+        h2{
+            transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+        }
+        .hr{
+            height: 5px;
+            width: 0;
+            background: blue;
+            transition: width 1s;
+            -webkit-transition: width 1s ease-in-out;
+            -moz-transition: width 1s ease-in-out;
+        }
+        .hr.before{
+            width: 0px;
+        }
+        .hr.after{
+            width: 110px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h2 id="h2">前端学院</h2>
+        <div class="hr" id="hr"></div>
+        <input id="btn" type="button" value="切换样式">
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var h2 = document.getElementById('h2');
+        var hr = document.getElementById('hr');
+        var flag = true;
+        btn.addEventListener('click', function(){
+            if(flag){
+                h2.style.color = 'blue';
+                hr.className = 'hr after';
+                flag = false;
+            }else{
+                h2.style.color = 'black';
+                hr.className = 'hr before';
+                flag = true;
+            }
+        });
+    </script>
+</body>
+</html>
