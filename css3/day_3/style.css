@@ -37,7 +37,7 @@ body {
     border: 2px solid #000;
     background: #fbf8f1;
     border-radius: 100% 10% 50% 0% ;
-    animation: earLaugh 4s linear infinite;
+    transition: all 1.2s;
 }
 .ear-wrap .right {
     left: auto;
@@ -90,6 +90,7 @@ body {
     position: absolute;
     left: 50%;
     margin-left: -23px;
+    transition: all 1s cubic-bezier(0.42, 0, 0.58, 1.0);
 }
 .eye-bottom {
     height: 50px;
@@ -99,6 +100,7 @@ body {
     margin-top: 48px;
     border-top: 2px solid #46240b;
     background: #f6f7f2;
+    transition: all 1s;
 }
 .eye-wrap .right {
     left: auto;
@@ -115,6 +117,7 @@ body {
     border-radius: 50% 50% 50% 50%;
     background: #e85a5e;
     opacity: 0.0;
+    transition: 1.7s;
 }
 /* 鼻子 */
 .nose {
@@ -146,6 +149,7 @@ body {
     margin-top: -26px;
     position: absolute;
     left: 0;
+    transition: all 1.2s;
 }
 .mouth-wrap .right {
     border-bottom: 4px solid #000;
@@ -157,3 +161,30 @@ body {
     right: 0;
 }
 /*鼠标hover样式 写在这里*/
+.face:hover~.ear-wrap .right{
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+.face:hover~.ear-wrap .left{
+    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+}
+.face:hover .mouth{
+    border-radius: 50%;
+}
+.face:hover .eye-bottom{
+    margin-top: 30px; 
+}
+.face:hover .eye-core{
+    transform: scaleX(0.9);
+    -webkit-transform: scaleX(0.9);
+    -moz-transform: scaleX(0.9);
+}
+.face:hover .face-red{
+    opacity:0.6;
+    transform: scaleX(0.8);
+    -webkit-transform: scaleX(0.8);
+    -moz-transform: scaleX(0.8);
+}
