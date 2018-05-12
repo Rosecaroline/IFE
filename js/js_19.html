@@ -37,7 +37,8 @@
 
     function getAllListItem() {
         // 返回页面中所有li标签
-        var aLi = document.getElementsByTagName('li');
+        var Cont = document.getElementsByTagName('content');
+        var aLi = Cont.getElementsByTagName('li');
 
         return aLi;
     }
@@ -45,7 +46,7 @@
     function findAllHtmlSpanInOneSection(sectionId) {
         // 返回某个section下所有span中内容为HTML的span标签
         var arr = [];
-        var section = document.getElementById('sectionId');
+        var section = document.getElementById(sectionId);
         var span = section.getElementsByTagName('span');
 
         for(var i=0; i<span.length; i++){
@@ -58,12 +59,76 @@
 
     function findListItem(sectionId, spanCont) {
         // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        var section = document.getElementById(sectionId);
+        var aLi = section.getElementsByTagName('li');
+        var arr = [];
+
+        for(var i=0; i<aLi.length; i++){
+            var span = aLi[i].getElementsByTagName('span');
+            for(var j=0; j<span.length; j++){
+                if( span[j].innerHTML == spanCont){
+                    arr.push(span[j].parentNode);
+                }
+            }
+        }
+        return arr;
     }
 
     function getActiveLinkContent(sectionId) {
         // 返回某个section下，class为active的链接中包含的文字内容
+        var section = document.getElementById(sectionId);
+        var aHref = section.getElementsByTagName('a');
+        var str = '';
+        for(var i=0; i<aHref.length; i++){
+            if(aHref[i].className == 'active'){
+                str = aHref[i].innerHTML;
+            }
+        }
+        return str;
     }
 
+    // 使用querySelector及querySelectorAll
+    function getAllListItem2() {
+        // 返回页面中所有li标签
+        var liItem = document.querySelectorAll('li');
+        return liItem;
+    }
+
+    function findAllHtmlSpanInOneSection2(sectionId) {
+        // 返回某个section下所有span中内容为HTML的span标签
+        var secParent = document.querySelector('#' + sectionId);
+        var spanList = secParent.querySelectorAll('span');
+        var result = [];
+        for(var i=0; i<spanList.length; i++){
+            if(spanList[i].innerHTML == 'HTML'){
+                result.push(spanList[i]);
+            }
+        }
+        return result;
+    }
+
+    function findListItem2(sectionId, spanCont) {
+        // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        var secParent = document.querySelector('#' + sectionId);
+        var liList = secParent.querySelectorAll('li');
+        var result = [];
+        for(var i=0; i<liList.length; i++){
+            var spanList = liList[i].querySelectorAll('span');
+            for(var j=0; j<spanList.length; j++){
+                if(spanList[j].innerHTML == spanCont){
+                    result.push(spanList[j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    function getActiveLinkContent2(sectionId) {
+        // 返回某个section下，class为active的链接中包含的文字内容
+        var secParent = document.querySelector('#' + sectionId);
+        var active = secParent.querySelector('.active');
+        return active.innerHTML;
+    }
     </script>
 </body>
 </html>
