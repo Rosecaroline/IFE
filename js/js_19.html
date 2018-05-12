@@ -126,8 +126,12 @@
     function getActiveLinkContent2(sectionId) {
         // 返回某个section下，class为active的链接中包含的文字内容
         var secParent = document.querySelector('#' + sectionId);
-        var active = secParent.querySelector('.active');
-        return active.innerHTML;
+        var active = secParent.querySelectorAll('.active');
+        var text = '';
+        for(var i=0; i<active.length; i++){
+            text = active[i].innerHTML;
+        }
+        return text;
     }
     </script>
 </body>
