@@ -37,16 +37,23 @@
 
     function getAllListItem() {
         // 返回页面中所有li标签
-        var Cont = document.getElementsByTagName('content');
-        var aLi = Cont.getElementsByTagName('li');
+        var aLi = document.getElementsByTagName('li');
+
+        return aLi;
     }
 
     function findAllHtmlSpanInOneSection(sectionId) {
         // 返回某个section下所有span中内容为HTML的span标签
-        var Section = document.getElementsByTagName('section');
-        var Span = Section.getElementsByTagName('span');
-        var sectionId;
-     
+        var arr = [];
+        var section = document.getElementById('sectionId');
+        var span = section.getElementsByTagName('span');
+
+        for(var i=0; i<span.length; i++){
+            if(span[i].innerHTML == 'HTML'){
+                arr.push(span[i]);
+            }
+        }
+        return arr;
     }
 
     function findListItem(sectionId, spanCont) {
