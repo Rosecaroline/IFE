@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        select {
+            display: none;
+        }
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 任务一 -->
+    <input id="name" type="text">    
+    <button id="submit-btn">Submit</button>
+    <br>
+    <!-- 任务二 -->
+    <label>
+        <input id="school" name="status" type="radio">
+            School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+    <br>
+    <!-- 任务三 -->
+    <ul class="palette">
+        <li style="background-color:crimson"></li>
+        <li style="background-color:bisque"></li>
+        <li style="background-color:blueviolet"></li>
+        <li style="background-color:coral"></li>
+        <li style="background-color:chartreuse"></li>
+        <li style="background-color:darkolivegreen"></li>
+        <li style="background-color:cyan"></li>
+        <li style="background-color:#194738"></li>        
+    </ul>
+    <p class="color-picker"></p>
+    <br>
+    <!-- 任务四 -->
+    <div id="fade-obj" style="width:300px;height:300px;background:#000;"></div>
+    <button id="fade-btn">淡出</button>
+
+    <!-- js代码 -->
+    <script>
+        window.onload = function(){
+            // 任务一
+            var submit = document.getElementById('submit-btn');
+            var name = document.getElementById('name');
+        
+            submit.addEventListener('click', function(){
+                console.log(name.value);
+            });
+            name.addEventListener('keydown', function(e){
+                if(e.keyCode == 13){
+                    console.log(name.value);
+                }else if(e.keyCode == 27){
+                    name.value = '';
+                }
+            });
+            // 任务二
+            var school = document.getElementById("school");
+            var company = document.getElementById("company");
+            var schoolSelect = document.getElementById("school-select");
+            var companySelect = document.getElementById("company-select");
+
+            school.addEventListener('focus',function(){
+                schoolSelect.style.display = 'block';
+                companySelect.style.display = 'none';
+            });
+            company.addEventListener('focus',function(){
+                schoolSelect.style.display = 'none';
+                companySelect.style.display = 'block';
+            });
+            // 任务三
+            var aLi = document.querySelectorAll('li');
+            /* for(var i=0; i<aLi.length; i++){
+                aLi[i].onclick = function(e){
+                    var t = e.target;
+                    var c = t.style.backgroundColor;
+                    var para = document.getElementsByClassName('color-picker')[0];
+                    para.innerHTML = c;
+                    para.style.color = c;
+                }
+            } */
+            /*var para = document.querySelector('p');
+
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].onclick = function(){
+                    para.innerHTML = this.style.backgroundColor;
+                    para.style.color = this.style.backgroundColor;
+                }
+            }*/
+            // 事件代理
+            var oUl = document.querySelector('.palette');
+            oUl.onclick = function(e){
+                var t = e.target;
+                var c = t.style.backgroundColor;
+                var para = document.getElementsByClassName('color-picker')[0];
+                para.innerHTML = c;
+                para.style.color = c;
+            }
+            
+            // 任务四
+            var fadeBtn = document.getElementById('fade-btn');
+            var fade = document.getElementById('fade-obj');
+            var timer = null;
+            
+            fadeBtn.onclick = function(e){
+                e.target.disabled = true;
+                clearInterval(timer);
+                if(fadeBtn.innerHTML == '淡出'){
+                    fade.style.transition = 'opacity 2s';
+                    fade.style.opacity = '0';
+                    timer = setInterval(function(){
+                        fadeBtn.innerHTML = '淡入';
+                        e.target.disabled = false;
+                    },2000);
+                }else{
+                    fade.style.transition = 'opacity 2s';
+                    fade.style.opacity = '1';
+                    timer = setInterval(function(){
+                        fadeBtn.innerHTML = '淡出';
+                        e.target.disabled = false;
+                    },2000);
+                }    
+            }      
+        }
+    </script>
+</body>
+</html>
