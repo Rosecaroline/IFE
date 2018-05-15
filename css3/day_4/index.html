@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 350px;
+            position: relative;
+            box-sizing: border-box;
+            perspective: 800px;
+        }
+        .imgbefore{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 1s;
+        }
+        .imgafter{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(-180deg);
+            backface-visibility: hidden;
+            transition: 1s;
+        }
+        .box:hover .imgbefore{
+            transform: rotateY(180deg);
+        }
+        .box:hover .imgafter{
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="imgbefore"><img src="images/1.jpg" alt=""></div>
+        <div class="imgafter"><img src="images/2.jpg" alt=""></div>
+    </div>
+</body>
+</html>
