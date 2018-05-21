@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt"></div>
+    <script>
+        var txt = document.querySelector('#txt');
+        setInterval(startTime, 1000);
+        startTime();
+
+        function startTime(){
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var date = today.getDate();
+            var week = today.getDay();
+            var hours = today.getHours();
+            var minute = today.getMinutes();
+            var seconds = today.getSeconds();
+            var str = '';
+            var result = null;
+
+            if(week === 0) week = '星期日';
+            if(week === 1) week = '星期一';
+            if(week === 2) week = '星期二';
+            if(week === 3) week = '星期三';
+            if(week === 4) week = '星期四';
+            if(week === 5) week = '星期五';
+            if(week === 6) week = '星期六';      
+
+            month = checkTime(month);
+            date = checkTime(date);
+            hours = checkTime(hours);
+            minute = checkTime(minute);
+            seconds = checkTime(seconds);
+            str = year + '年' + month + '月' + date + '日' + week + ' ' + hours + ':' + minute + ':' + seconds;
+            txt.innerHTML = str;
+        }
+        
+        function checkTime(n){
+            if(n < 10){
+                return '0' + n;
+            }else{
+                return n;
+            }
+        }
+        
+    </script>
+</body>
+</html>
