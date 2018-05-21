@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt"></div>
+    <div id="txt1"></div>
+
+    <script>
+        var txt = document.querySelector('#txt');
+        var txt1 = document.querySelector('#txt1');
+        
+        function getDay1(date){
+            var day = date.getDay();
+            switch(day){
+                case 0:
+                    day = '星期日';
+                    break;
+                case 1:
+                    day = '星期一';
+                    break;
+                case 2:
+                    day = '星期二';
+                    break;
+                case 3:
+                    day = '星期三';
+                    break;
+                case 4:
+                    day = '星期四';
+                    break;
+                case 5:
+                    day = '星期五';
+                    break;
+                case 6:
+                    day = '星期六';
+                    break;
+            }
+            return day;
+        }
+        function getDay2(date){
+            var day = date.getDay();
+            switch(day){
+                case 0:
+                    day = 'Sunday';
+                    break;
+                case 1:
+                    day = 'Monday';
+                    break;
+                case 2:
+                    day = 'Tuesday';
+                    break;
+                case 3:
+                    day = 'Wednesday';
+                    break;
+                case 4:
+                    day = 'Thursday';
+                    break;
+                case 5:
+                    day = 'Friday';
+                    break;
+                case 6:
+                    day = 'Saturday';
+                    break;
+            }
+            return day;
+        }
+        function getTime(date){
+            var arr = [];
+            arr[0] = date.getFullYear();
+            arr[1] = date.getMonth() + 1;
+            arr[2] = date.getDate();
+            arr[3] = date.getHours();
+            arr[4] =  date.getMinutes();
+            arr[5] = date.getSeconds();
+            arr[6] = arr[3];
+            if(arr[3] < 12){
+                arr[6] = 'AM';
+            }else{
+                arr[6] = 'PM';
+            }
+            for(var i=0; i<arr.length - 1; i++){
+                arr[i] = checkTime(arr[i]);
+            }
+            return arr;
+        }
+        function checkTime(n){
+            if(n < 10){
+                return '0' + n;
+            }else{
+                return n;
+            }
+        }
+        
+        function startTime1(){
+            var date = new Date();
+            var arr = getTime(date);
+            var week = getDay1(date);
+            txt.innerHTML = arr[0] + '年' + arr[1] + '月' + arr[2] + '日' + week + ' ' + arr[3] + ':' + arr[4] + ':' + arr[5]; 
+            setInterval(startTime1, 1000);
+        }       
+        startTime1();
+        function startTime2(){
+            var date = new Date();
+            var arr = getTime(date);
+            var week = getDay2(date);
+            txt1.innerHTML = arr[0] + '-' + arr[1] + '-' + arr[2] + week + ' ' + arr[3] + ':' + arr[4] + ':' + arr[5] + ' ' + arr[6]; 
+            setInterval(startTime2, 1000);
+        }       
+        startTime2();
+    </script>
+</body>
+</html>
